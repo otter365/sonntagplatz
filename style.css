@@ -38,6 +38,11 @@ h1 { font-size: 3.5rem; margin-bottom: 20px; }
     transition: background 0.3s ease;
 }
 
+/* Remove the right border on the very last item so it looks flush */
+.sector:last-child {
+    border-right: none;
+}
+
 .sector:hover {
     background-color: #fafafa;
 }
@@ -81,8 +86,10 @@ h1 { font-size: 3.5rem; margin-bottom: 20px; }
 /* Ensure the Grid container spans the full width of the body */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates the 2x2 grid look from your screenshot */
+    /* This forces all 4 sectors into a single horizontal line */
+    grid-template-columns: repeat(4, 1fr); 
     border-top: 1px solid #eee;
+    margin-top: 50px;
 }
 
 /* Mobile responsiveness: stack the sectors on small screens */
