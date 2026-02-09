@@ -104,3 +104,43 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
     .grid-container { grid-template-columns: 1fr; }
     h1 { font-size: 2.5rem; }
 }
+
+/* NEW SESSION FOR und.html */
+
+/* Blog Page Specifics */
+.blog-page {
+    /* No margin: 0 auto; here - we use the 10% padding to match the index header */
+}
+
+.blog-nav {
+    padding: 40px 10% 0 10%; /* Matches the left alignment of the index header */
+}
+
+.blog-header {
+    padding: 60px 10% 60px 10%;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 60px;
+}
+
+.blog-content {
+    padding: 0 10% 120px 10%;
+}
+
+/* Ensure blog body text is the same high-end weight */
+.post-body p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: var(--ink);
+    max-width: 650px; /* Slightly wider than the index for long-form reading */
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Match the blog H2 to the index H2 style */
+.post h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 2.5rem; /* Larger for the main article title */
+    font-weight: 400;
+    margin-bottom: 20px;
+}
