@@ -144,3 +144,41 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
     font-weight: 400;
     margin-bottom: 20px;
 }
+
+/* Improvements for mobile view */
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    /* Reduce header padding so it doesn't take up the whole screen */
+    header.main-header {
+        padding: 80px 10% 40px 10%;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Slightly smaller title for mobile */
+    }
+
+    /* Stack the 4 columns into 1 single column */
+    .grid-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .sector {
+        padding: 40px 10%; /* Adjust padding for better thumb-scrolling */
+        border-right: none; /* Remove vertical dividers since they are now stacked */
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Blog Page Adjustments */
+    .blog-header {
+        padding: 40px 10%;
+    }
+
+    .post h2 {
+        font-size: 1.8rem; /* Scale down blog titles */
+    }
+
+    .post-body p {
+        font-size: 1.05rem; /* Slightly smaller text for better density */
+    }
+}
