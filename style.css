@@ -1,100 +1,106 @@
-/* Import a beautiful Serif font to match your original look */
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+/* Core Variables & Global Setup */
+:root { 
+    --paper: #fdfcfb; 
+    --ink: #1a1a1a; 
+    --gray: #666; 
+}
 
 body { 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    background-color: var(--paper); 
+    color: var(--ink); 
+    font-family: 'Inter', sans-serif; 
+    font-weight: 300; /* This is the secret for that high-end thin look */
+    margin: 0; 
     line-height: 1.6; 
-    max-width: 1100px; /* Wider for the grid */
-    margin: 60px auto; 
-    padding: 20px; 
-    color: #1a1a1a;
-    background-color: #fff;
 }
 
-/* THE TITLES: Restoring that elegant Serif look */
-h1, h2, h3, .sector h2 { 
-    font-family: 'Source Serif 4', serif;
-    font-weight: 400;
-    margin-top: 0;
+/* Header & Home Page Layout */
+header.main-header { 
+    padding: 120px 10% 60px 10%; 
+    border-bottom: 1px solid #eee; 
 }
 
-h1 { font-size: 3.5rem; margin-bottom: 20px; }
-
-/* THE GRID: Restoring the Sector layout from your screenshot */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0; /* Original used thin borders instead of gaps */
-    border-top: 1px solid #eee;
-    margin-top: 50px;
+h1 { 
+    font-family: 'Source Serif 4', serif; 
+    font-size: 3.5rem; 
+    font-weight: 300; 
+    margin: 0; 
+    letter-spacing: -1px; 
 }
 
-.sector {
-    padding: 40px 20px;
-    border-right: 1px solid #eee;
+.tagline { 
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem; 
+    color: var(--gray); 
+    max-width: 600px; 
+    margin-top: 20px; 
+    font-weight: 300; 
+}
+
+/* The Grid - This replicates the 4-column row exactly */
+.grid-container { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    padding: 0; 
+}
+
+.sector { 
+    padding: 60px 10%; 
     border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee; /* Adds the vertical dividers */
+    transition: background 0.3s ease;
     text-decoration: none;
     color: inherit;
-    transition: background 0.3s ease;
-}
-
-/* Remove the right border on the very last item so it looks flush */
-.sector:last-child {
-    border-right: none;
-}
-
-.sector:hover {
-    background-color: #fafafa;
-}
-
-.label {
     display: block;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #999;
-    margin-bottom: 15px;
 }
 
-/* BLOG PAGE SPECIFIC (UndSonntag) */
-.blog-page .intro-text {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 60px;
-    max-width: 600px;
+.sector:last-child { border-right: none; }
+.sector:hover { background-color: #f7f3f0; }
+
+.sector h2 { 
+    font-family: 'Source Serif 4', serif; 
+    font-size: 2rem; 
+    font-weight: 400; 
+    margin: 0 0 15px 0; 
 }
 
-.post-body {
-    max-width: 650px; /* Better for reading long text */
-    font-size: 1.15rem;
-}
-
-/* header and tagline styling */
-.main-header {
-    margin-bottom: 80px;
-    max-width: 600px; /* Limits the width of the title/tagline like in your screenshot */
-}
-
-.tagline {
+.sector p { 
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    color: #555;
-    font-weight: 300;
+    font-weight: 300; /* This makes it look airy and professional */
+    font-size: 1rem; 
+    color: var(--gray); 
+    max-width: 400px; /* Forces the text to wrap like in your screenshot */
+    margin-top: 10px;
     line-height: 1.5;
 }
 
-/* Ensure the Grid container spans the full width of the body */
-.grid-container {
-    display: grid;
-    /* This forces all 4 sectors into a single horizontal line */
-    grid-template-columns: repeat(4, 1fr); 
-    border-top: 1px solid #eee;
-    margin-top: 50px;
+.label { 
+    font-size: 0.7rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    color: #999; 
+    margin-bottom: 10px; 
+    display: block; 
 }
 
-/* Mobile responsiveness: stack the sectors on small screens */
+/* Blog Page Styling (und.html) */
+.blog-page {
+    padding: 60px 10%; /* Matches the header padding for consistency */
+    max-width: 900px; /* Limits reading width */
+    margin: 0 auto;
+}
+
+.blog-page nav { margin-bottom: 40px; }
+.blog-page h2 { font-size: 2.5rem; }
+.post-meta { font-size: 0.8rem; color: #999; letter-spacing: 1px; margin-bottom: 20px; }
+.post-body { font-size: 1.15rem; color: #333; }
+blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: italic; margin: 30px 0; }
+
+/* Responsive: stack on mobile */
+@media (max-width: 1000px) {
+    .grid-container { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
+    .grid-container { grid-template-columns: 1fr; }
+    h1 { font-size: 2.5rem; }
 }
