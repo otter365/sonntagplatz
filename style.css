@@ -186,8 +186,8 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
 /* FOOTER */
 .site-footer {
   margin-top: 64px;
-  padding: 24px 0 40px;
-  border-top: 1px solid #eee;   /* <-- change this */
+  padding: 24px 10% 40px;   /* <-- changed from 0 to 10% */
+  border-top: 1px solid #eee;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
