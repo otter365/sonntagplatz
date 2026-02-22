@@ -9,7 +9,7 @@
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UndSonntag | Tech Strategy & Product Growth</title>
+    <title>UndSonntag | Product Strategy, Business & Technical Architecture</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems.">
@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://sonntagplatz.com/und.html">
     <meta property="og:title" content="UndSonntag | Tech Strategy & Product Growth">
     <meta property="og:description" content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems.">
-    <meta property="og:image" content="https://sonntagplatz.com/images/og-und.jpg">
+    <meta property="og:image" content="https://sonntagplatz.com/images/og-und.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
@@ -60,7 +60,7 @@
 
     <header class="blog-header">
         <h1>UndSonntag</h1>
-        <p class="tagline">Engine room. Here you will find resources for business and tech.</p>
+        <p class="tagline">Notes on building software & businesses: product, systems, and delivery.</p>
     </header>
 
     <main class="blog-content">
@@ -69,18 +69,41 @@
             <h2>CI/CD for Product Managers: Getting Your Hands Dirty</h2>
             
             <div class="post-body">
-                <p>I just deployed a professional <strong>"Digital Square"</strong> with a setup that many mid-level developers would envy. Most PMs talk about pipelines in high-level roadmap meetings, but few actually step into the engine room to build one.</p>
+                <p>This site is deployed through a simple pipeline: <strong>VS Code → GitHub → Cloudflare Pages</strong>.</p>
 
-                <p>By connecting <strong>VS Code</strong> to <strong>GitHub</strong> and <strong>Cloudflare Pages</strong>, I’ve established a seamless CI/CD Pipeline. This means the friction between an idea and a live URL has been reduced to zero.</p>
+                <p>Most product work touches CI/CD indirectly—roadmaps, release coordination, incident follow-ups. I wanted the opposite: a setup where publishing is frictionless and fully under my control.</p>
+
+                <p>The result is straightforward: every change is versioned, reviewed, and deployed automatically. The distance between a draft and a live URL is now one commit.</p>
 
                 <blockquote>
-                    "I am now the master of my own content with $0 overhead. By using the same tools as the engineering teams I lead, I’ve reclaimed the ability to iterate at the speed of thought."
+                    I want this section to document practical systems—how they work, why they matter, and how to keep them maintainable.
                 </blockquote>
 
-                <p>From now on, this space will serve as the technical documentation for my builds—proving that a Product Manager's greatest asset isn't just a spreadsheet, but the ability to execute on the metal.</p>
+                <p>Future posts will cover the small mechanics that compound: structure, deployment, release hygiene, and the interface between product decisions and engineering reality.</p>
             </div>
         </article>
-    </main>
-
+    </main> 
 </body>
+<footer class="site-footer">
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/doch.html">DochSonntag</a>
+    <a href="/und.html">UndSonntag</a>
+    <a href="/aber.html">AberSonntag</a>
+    <a href="/nur.html">NurSonntag</a>
+  </nav>
+
+  <div class="footer-meta">
+    <span>Notes from Sonntagplatz.</span>
+    <span class="sep">·</span>
+    <a href="/sitemap.xml">Sitemap</a>
+  </div>
+
+  <div class="footer-small">
+    <span>© <span id="year"></span> Sonntagplatz</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </html>

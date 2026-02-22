@@ -66,3 +66,7 @@ Development is local in VS Code and deployed through GitHub → Cloudflare Pages
 - Standardize favicon + manifest paths
 - Add article template for manual posting (`/templates/post-template.html`)
 - Add section hubs with internal linking between clusters
+
+## Author
+
+Written under the name **Sonntag**.
