@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!-- Section map (source of truth):
+    DochSonntag = Torah / Ethics / Wisdom
+    AberSonntag = World Systems / Institutional Analysis
+    UndSonntag  = Business & Tech
+    NurSonntag  = Craft / Living / Curiosity
+    -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">https://sonntagplatz.com/images/og-aber.png
     <title>AberSonntag | World Systems & Institutional Analysis</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Contrarian analysis of world order, institutions, and incentives—essays that challenge conventional narratives with restraint.">
+    <meta name="description" content="Analysis that tries to name what is usually left implicit">
     <meta name="author" content="sonntag">
-    <meta name="keywords" content="torah analysis, ancient wisdom, jewish philosophy, ethical frameworks, talmudic insights, religious ethics, torah commentary">
+    <meta name="keywords" content="world systems, institutional analysis, incentives, geopolitics, political economy, global order, contrarian analysis">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sonntagplatz.com/aber.html">
     <meta property="og:title" content="AberSonntag | World Systems & Institutional Analysis">
-    <meta property="og:description" content="Contrarian analysis of world order, institutions, and incentives—essays that challenge conventional narratives with restraint.">
+    <meta property="og:description" content="Analysis that tries to name what is usually left implicit">
     <meta property="og:image" content="https://sonntagplatz.com/images/og-aber.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sonntagplatz.com/aber.html">
     <meta name="twitter:title" content="AberSonntag | World Systems & Institutional Analysis">
-    <meta name="twitter:description" content="Contrarian analysis of world order, institutions, and incentives—essays that challenge conventional narratives with restraint.">
+    <meta name="twitter:description" content="Analysis that tries to name what is usually left implicit">
     <meta name="twitter:image" content="https://sonntagplatz.com/images/og-aber.png">
     
     <!-- Additional Meta -->
@@ -29,16 +38,27 @@
     <link rel="canonical" href="https://sonntagplatz.com/aber.html">
     
     <!-- Favicon - Multi-device support -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     
-    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AberSonntag",
+    "url": "https://sonntagplatz.com/aber.html",
+    "inLanguage": "en"
+    }
+    </script>
 </head>
 <body class="blog-page">
 
@@ -48,7 +68,7 @@
 
     <header class="blog-header">
         <h1>AberSonntag</h1>
-        <p class="tagline">World order, institutions, and incentives—analysis that tries to name what's usually left implicit.</p>
+        <p class="tagline">World order, institutions, and incentives—analysis that tries to name what is usually left implicit.</p>
     </header>
 
     <main class="blog-content">
@@ -60,7 +80,29 @@
                 <p>This section is under construction. Expect essays on geopolitics, institutions, and incentives—written without slogans.</p>
             </div>
         </article>
-    </main>
+    </main> 
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer">
+            <a href="/doch.html">DochSonntag</a> |
+            <a href="/und.html">UndSonntag</a> |
+            <a href="/aber.html">AberSonntag</a> |
+            <a href="/nur.html">NurSonntag</a>
+        </nav>
+
+        <div class="footer-meta">
+            <span>Notes from Sonntagplatz.</span>
+            <span class="sep">·</span>
+            <a href="/sitemap.xml">Sitemap</a>
+        </div>
+
+        <div class="footer-small">
+            <span>© <span id="year"></span> Sonntagplatz</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
