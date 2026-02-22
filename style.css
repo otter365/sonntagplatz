@@ -123,7 +123,7 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
 }
 
 .blog-content {
-    padding: 0 10% 120px 10%;
+    padding: 0 10% 60px 10%;
 }
 
 /* Ensure blog body text is the same high-end weight */
@@ -187,7 +187,7 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
 .site-footer {
   margin-top: 64px;
   padding: 24px 0 40px;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid #eee;   /* <-- change this */
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
@@ -200,10 +200,20 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
 
 .footer-meta, .footer-small {
   font-size: 14px;
-  opacity: 0.75;
+  color: var(--gray);  /* <-- add this */
+  opacity: 1;          /* <-- optional: remove opacity */
 }
 
 .footer-meta .sep {
   margin: 0 8px;
   opacity: 0.6;
+}
+
+.footer-nav a, .footer-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-nav a:hover, .footer-meta a:hover {
+  text-decoration: underline;
 }
