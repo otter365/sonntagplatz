@@ -19,7 +19,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sonntagplatz.com/und.html">
-    <meta property="og:title" content="UndSonntag | Tech Strategy & Product Growth">
+    <meta property="og:title" content="UndSonntag | Product Strategy, Business & Technical Architecture">
     <meta property="og:description" content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems.">
     <meta property="og:image" content="https://sonntagplatz.com/images/og-und.png">
     <meta property="og:image:width" content="1200">
@@ -29,7 +29,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sonntagplatz.com/und.html">
-    <meta name="twitter:title" content="UndSonntag | Tech Strategy & Product Growth">
+    <meta name="twitter:title" content="UndSonntag | Product Strategy, Business & Technical Architecture">
     <meta name="twitter:description" content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems.">
     <meta name="twitter:image" content="https://sonntagplatz.com/images/og-und.png">
     
@@ -83,27 +83,27 @@
             </div>
         </article>
     </main> 
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer">
+            <a href="/doch.html">DochSonntag</a>
+            <a href="/und.html">UndSonntag</a>
+            <a href="/aber.html">AberSonntag</a>
+            <a href="/nur.html">NurSonntag</a>
+        </nav>
+
+        <div class="footer-meta">
+            <span>Notes from Sonntagplatz.</span>
+            <span class="sep">·</span>
+            <a href="/sitemap.xml">Sitemap</a>
+        </div>
+
+        <div class="footer-small">
+            <span>© <span id="year"></span> Sonntagplatz</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
-<footer class="site-footer">
-  <nav class="footer-nav" aria-label="Footer">
-    <a href="/doch.html">DochSonntag</a>
-    <a href="/und.html">UndSonntag</a>
-    <a href="/aber.html">AberSonntag</a>
-    <a href="/nur.html">NurSonntag</a>
-  </nav>
-
-  <div class="footer-meta">
-    <span>Notes from Sonntagplatz.</span>
-    <span class="sep">·</span>
-    <a href="/sitemap.xml">Sitemap</a>
-  </div>
-
-  <div class="footer-small">
-    <span>© <span id="year"></span> Sonntagplatz</span>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 </html>
