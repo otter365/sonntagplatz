@@ -81,7 +81,29 @@
                 <p>This section is currently under development. Check back soon for photography, culinary explorations, and curated curiosities.</p>
             </div>
         </article>
-    </main>
+    </main> 
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer">
+            <a href="/doch.html">DochSonntag</a> |
+            <a href="/und.html">UndSonntag</a> |
+            <a href="/aber.html">AberSonntag</a> |
+            <a href="/nur.html">NurSonntag</a>
+        </nav>
+
+        <div class="footer-meta">
+            <span>Notes from Sonntagplatz.</span>
+            <span class="sep">·</span>
+            <a href="/sitemap.xml">Sitemap</a>
+        </div>
+
+        <div class="footer-small">
+            <span>© <span id="year"></span> Sonntagplatz</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
