@@ -96,29 +96,49 @@
             </div>
         </article>
     </main> 
-    <footer class="site-footer">
-        <nav class="footer-nav" aria-label="Footer">
-            <a href="/index.html">SonntagPlatz</a> |
-            <a href="/doch.html">DochSonntag</a> |
-            <a href="/und.html">UndSonntag</a> |
-            <a href="/aber.html">AberSonntag</a> |
-            <a href="/nur.html">NurSonntag</a>
-        </nav>
+  
+        
+    <footer class="shell-footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-title">Sonntagplatz</div>
+                <p class="footer-text">A library across four verticals—Torah, systems analysis, product execution, and craft—kept intentionally lean.</p>
+            </div>
 
-        <div class="footer-meta">
-            <span>Notes from Sonntagplatz.</span>
-            <span class="sep">·</span>
+            <div>
+                <div class="footer-title">Sections</div>
+                <a href="/und.html">UndSonntag</a>
+                <a href="/doch.html">DochSonntag</a>
+                <a href="/aber.html">AberSonntag</a>
+                <a href="/nur.html">NurSonntag</a>
+            </div>
+
+            <div>
+                <div class="footer-title">Substack</div>
+                <a href="https://rsonntag.substack.com/" target="_blank" rel="noopener">The Product Perspective</a>
+                <a href="https://dochsonntag.substack.com/" target="_blank" rel="noopener">DochSonntag</a>
+                <a href="https://abersonntag.substack.com/" target="_blank" rel="noopener">AberSonntag</a>
+                <a href="https://nursonntag.substack.com/" target="_blank" rel="noopener">NurSonntag</a>
+            </div>
+
+            <div>
+            <div class="footer-title">Explore</div>
+            <a href="/sitemap.xml">Sitemap</a>
+            <a href="/support.html">Support</a>
+            <a href="mailto:contact@sonntagplatz.com">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="year"></span> Sonntagplatz</span>
+            <span class="dot">·</span>
             <a href="/sitemap.xml">Sitemap</a>
         </div>
 
-        <div class="footer-small">
-            <span>© <span id="year"></span> Sonntagplatz</span>
-        </div>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
     </footer>
-
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
 
 </body>
 </html>
