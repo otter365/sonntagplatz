@@ -1,255 +1,76 @@
+/* =========================
+   Sonntagplatz — style.css
+   ========================= */
+
 /* Core Variables & Global Setup */
-:root { 
-    --paper: #fdfcfb; 
-    --ink: #1a1a1a; 
-    --gray: #666; 
-}
+:root {
+  --paper: #fdfcfb;
+  --ink: #1a1a1a;
+  --gray: #666;
+  --rule: #eee;
 
-body { 
-    background-color: var(--paper); 
-    color: var(--ink); 
-    font-family: 'Inter', sans-serif; 
-    font-weight: 300; /* This is the secret for that high-end thin look */
-    margin: 0; 
-    line-height: 1.6; 
-}
-
-/* Header & Home Page Layout */
-header.main-header { 
-    padding: 120px 10% 60px 10%; 
-    border-bottom: 1px solid #eee; 
-}
-
-h1 { 
-    font-family: 'Source Serif 4', serif; 
-    font-size: 3.5rem; 
-    font-weight: 300; 
-    margin: 0; 
-    letter-spacing: -1px; 
-}
-
-.tagline { 
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem; 
-    color: var(--gray); 
-    max-width: 600px; 
-    margin-top: 20px; 
-    font-weight: 300; 
-}
-
-/* The Grid - This replicates the 4-column row exactly */
-.grid-container { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    padding: 0; 
-}
-
-.sector { 
-    padding: 60px 10%; 
-    border-bottom: 1px solid #eee;
-    border-right: 1px solid #eee; /* Adds the vertical dividers */
-    transition: background 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.sector:last-child { border-right: none; }
-.sector:hover { background-color: #f7f3f0; }
-
-.sector h2 { 
-    font-family: 'Source Serif 4', serif; 
-    font-size: 2rem; 
-    font-weight: 400; 
-    margin: 0 0 15px 0; 
-}
-
-.sector p { 
-    font-family: 'Inter', sans-serif;
-    font-weight: 300; /* This makes it look airy and professional */
-    font-size: 1rem; 
-    color: var(--gray); 
-    max-width: 400px; /* Forces the text to wrap like in your screenshot */
-    margin-top: 10px;
-    line-height: 1.5;
-}
-
-.label { 
-    font-size: 0.7rem; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    color: #999; 
-    margin-bottom: 10px; 
-    display: block; 
-}
-
-/* Blog Page Styling (und.html) */
-.blog-page {
-    padding: 60px 10%; /* Matches the header padding for consistency */
-    max-width: 900px; /* Limits reading width */
-    margin: 0 auto;
-}
-
-.blog-page nav { margin-bottom: 40px; }
-.blog-page h2 { font-size: 2.5rem; }
-.post-meta { font-size: 0.8rem; color: #999; letter-spacing: 1px; margin-bottom: 20px; }
-.post-body { font-size: 1.15rem; color: #333; }
-blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: italic; margin: 30px 0; }
-
-/* Responsive: stack on mobile */
-@media (max-width: 1000px) {
-    .grid-container { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-    .grid-container { grid-template-columns: 1fr; }
-    h1 { font-size: 2.5rem; }
-}
-
-/* NEW SESSION FOR und.html */
-
-/* Blog Page Specifics */
-.blog-page {
-    /* No margin: 0 auto; here - we use the 10% padding to match the index header */
-}
-
-.blog-nav {
-    padding: 40px 10% 0 10%; /* Matches the left alignment of the index header */
-}
-
-.blog-header {
-    padding: 60px 10% 60px 10%;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 60px;
-}
-
-.blog-content {
-    padding: 0 10% 60px 10%;
-}
-
-/* Ensure blog body text is the same high-end weight */
-.post-body p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    font-size: 1.1rem;
-    color: var(--ink);
-    max-width: 650px; /* Slightly wider than the index for long-form reading */
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-/* Match the blog H2 to the index H2 style */
-.post h2 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 2.5rem; /* Larger for the main article title */
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-/* Improvements for mobile view */
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-    /* Reduce header padding so it doesn't take up the whole screen */
-    header.main-header {
-        padding: 80px 10% 40px 10%;
-    }
-
-    h1 {
-        font-size: 2.5rem; /* Slightly smaller title for mobile */
-    }
-
-    /* Stack the 4 columns into 1 single column */
-    .grid-container {
-        grid-template-columns: 1fr; 
-    }
-
-    .sector {
-        padding: 40px 10%; /* Adjust padding for better thumb-scrolling */
-        border-right: none; /* Remove vertical dividers since they are now stacked */
-        border-bottom: 1px solid #eee;
-    }
-
-    /* Blog Page Adjustments */
-    .blog-header {
-        padding: 40px 10%;
-    }
-
-    .post h2 {
-        font-size: 1.8rem; /* Scale down blog titles */
-    }
-
-    .post-body p {
-        font-size: 1.05rem; /* Slightly smaller text for better density */
-    }
-}
-
-/* **********************FOOTER OLD****************** */
-/* .site-footer {
-  margin-top: 64px;
-  padding: 24px 10% 40px;   /* <-- changed from 0 to 10% */
-  /* border-top: 1px solid #eee;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-} */ 
-
-/* .footer-nav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-} */
-
-/* .footer-meta, .footer-small {
-  font-size: 14px;
-  color: var(--gray);  /* <-- add this */
-  /* opacity: 1;          /* <-- optional: remove opacity 
-} */ 
-
-/* .footer-meta .sep {
-  margin: 0 8px;
-  opacity: 0.6;
-}
-
-.footer-nav a, .footer-meta a {
-  color: inherit;
-  text-decoration: none;
-} */
-
-/* .footer-nav a:hover, .footer-meta a:hover {
-  text-decoration: underline;
-} */
-
-/* NEW FOOTER*/
-/* NASA-like Shell: Header + Footer */
-:root{
+  /* NASA-like shell */
   --shell: #0b0b0b;
   --shellInk: #f1f1f1;
-  --shellGray: rgba(241,241,241,0.72);
-  --shellLine: rgba(241,241,241,0.12);
+  --shellGray: rgba(241, 241, 241, 0.72);
+  --shellLine: rgba(241, 241, 241, 0.12);
 }
 
-/* Header */
-.shell-header{
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Global typography */
+h1 {
+  font-family: "Source Serif 4", serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.tagline {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+/* =========================
+   NASA-like Shell Header
+   ========================= */
+.shell-header {
   background: var(--shell);
   color: var(--shellInk);
 }
 
-.shell-inner{
-  display:flex;
-  align-items:center;
+.shell-inner {
+  display: flex;
+  align-items: center;
   gap: 18px;
   padding: 14px 10%;
 }
 
-.shell-brand{
+.shell-brand {
   color: var(--shellInk);
-  text-decoration:none;
-  font-family: 'Source Serif 4', serif;
+  text-decoration: none;
+  font-family: "Source Serif 4", serif;
   font-weight: 400;
   letter-spacing: -0.5px;
+  font-size: 1.05rem; /* brand slightly stronger */
 }
 
-.shell-nav{
-  display:flex;
+.shell-nav {
+  display: flex;
   gap: 16px;
   margin-left: 18px;
   font-size: 0.82rem;
@@ -258,65 +79,265 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
   color: var(--shellGray);
 }
 
-.shell-nav a{
+.shell-nav a {
   color: inherit;
-  text-decoration:none;
+  text-decoration: none;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
 }
 
-.shell-nav a:hover{
+.shell-nav a:hover {
   color: var(--shellInk);
-  border-bottom-color: rgba(241,241,241,0.25);
+  border-bottom-color: rgba(241, 241, 241, 0.25);
 }
 
-.shell-nav a.active{
+.shell-nav a.active {
   color: var(--shellInk);
-  border-bottom-color: rgba(241,241,241,0.45);
+  border-bottom-color: rgba(241, 241, 241, 0.45);
 }
 
-.shell-actions{
-  margin-left:auto;
-  display:flex;
-  gap: 10px;
-  align-items:center;
-  font-size: 0.82rem;
-  letter-spacing: 0.12em;
+/* Actions are utility (not dominant) */
+.shell-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--shellGray);
 }
 
-.shell-link{
-  color: var(--shellInk);
-  text-decoration:none;
+.shell-actions .shell-link {
+  color: var(--shellGray);
+  text-decoration: none;
+  padding: 0;
+  border: none;
 }
 
-.shell-pill{
+.shell-actions .shell-link:hover {
   color: var(--shellInk);
-  text-decoration:none;
-  border: 1px solid rgba(241,241,241,0.25);
-  padding: 8px 10px;
+  text-decoration: underline;
+}
+
+/* Use pill only for primary CTA on Und (Book a call) */
+.shell-pill {
+  color: var(--shellInk);
+  text-decoration: none;
+  border: 1px solid rgba(241, 241, 241, 0.22);
+  padding: 7px 10px;
   border-radius: 999px;
+  font-size: 0.72rem;
 }
 
-.shell-pill:hover{
-  border-color: rgba(241,241,241,0.5);
+.shell-pill:hover {
+  border-color: rgba(241, 241, 241, 0.5);
 }
 
-/* Footer */
-.shell-footer{
+/* =========================
+   Home Page Layout
+   ========================= */
+header.main-header {
+  padding: 120px 10% 60px 10%;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Grid portal */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0;
+}
+
+.sector {
+  padding: 60px 10%;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  transition: background 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.sector:last-child { border-right: none; }
+.sector:hover { background-color: #f7f3f0; }
+
+.sector h2 {
+  font-family: "Source Serif 4", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 15px 0;
+}
+
+.sector p {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--gray);
+  max-width: 400px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* =========================
+   Blog/Section Page Layout
+   ========================= */
+/* NOTE: .blog-page should be used on body for section pages */
+.blog-page {
+  /* Keep page width consistent with your current style */
+  padding: 0;
+}
+
+.blog-nav {
+  padding: 40px 10% 0 10%;
+}
+
+.blog-header {
+  padding: 60px 10% 60px 10%;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 60px;
+}
+
+.blog-content {
+  padding: 0 10% 60px 10%;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #999;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.post-body {
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.post-body p {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--ink);
+  max-width: 650px;
+  line-height: 1.7;
+  margin: 0 0 18px 0;
+}
+
+.post h2 {
+  font-family: "Source Serif 4", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--ink);
+  padding-left: 20px;
+  font-style: italic;
+  margin: 30px 0;
+}
+
+/* =========================
+   Buttons (light theme)
+   ========================= */
+.btn {
+  display: inline-block;
+  font: inherit;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  color: var(--ink);
+  background: transparent;
+  line-height: 1; /* consistent button height */
+}
+
+.btn:hover {
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+/* =========================
+   Subscribe Page
+   ========================= */
+.subscribe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  padding: 0; /* IMPORTANT: blog-content already provides 10% padding */
+}
+
+/* Clean, aligned cards */
+.subscribe-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--rule);
+  padding: 22px;
+  border-radius: 18px;
+  background: var(--paper);
+  min-height: 260px; /* keeps button alignment across cards */
+}
+
+/* Use your existing post-meta but remove extra margin inside cards */
+.subscribe-card .post-meta {
+  margin: 0;
+}
+
+/* Avoid "post-body" styling for the card description:
+   your HTML currently uses <p class="post-body"> inside cards.
+   We neutralize it here so it doesn't behave like long-form paragraphs.
+*/
+.subscribe-card .post-body {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--gray);
+  max-width: none;
+  line-height: 1.6;
+}
+
+/* Pin the button to bottom regardless of content length */
+.subscribe-card .btn {
+  margin-top: auto;
+  width: fit-content;
+}
+
+/* =========================
+   NASA-like Shell Footer
+   ========================= */
+.shell-footer {
   background: var(--shell);
   color: var(--shellInk);
   margin-top: 80px;
 }
 
-.shell-footer .footer-grid{
-  display:grid;
+.shell-footer .footer-grid {
+  display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 28px;
   padding: 38px 10%;
 }
 
-.shell-footer .footer-title{
+.shell-footer .footer-title {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -324,70 +345,71 @@ blockquote { border-left: 3px solid var(--ink); padding-left: 20px; font-style: 
   margin-bottom: 14px;
 }
 
-.shell-footer a{
-  display:block;
+.shell-footer a {
+  display: block;
   color: var(--shellGray);
-  text-decoration:none;
+  text-decoration: none;
   margin: 10px 0;
 }
 
-.shell-footer a:hover{
+.shell-footer a:hover {
   color: var(--shellInk);
   text-decoration: underline;
 }
 
-.shell-footer .footer-text{
+.shell-footer .footer-text {
   margin: 0;
   color: var(--shellGray);
   max-width: 52ch;
   line-height: 1.6;
 }
 
-.shell-footer .footer-bottom{
+.shell-footer .footer-bottom {
   border-top: 1px solid var(--shellLine);
   padding: 14px 10% 18px;
   color: var(--shellGray);
   font-size: 0.85rem;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  align-items:center;
+  align-items: center;
 }
 
-.shell-footer .dot{
+.shell-footer .dot {
   opacity: 0.6;
 }
 
-@media (max-width: 900px){
-  .shell-footer .footer-grid{ grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px){
-  .shell-inner{ padding: 12px 6%; }
-  .shell-footer .footer-grid{ grid-template-columns: 1fr; padding: 28px 6%; }
-  .shell-footer .footer-bottom{ padding: 14px 6% 18px; }
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 1000px) {
+  .grid-container { grid-template-columns: 1fr 1fr; }
 }
 
-/* ********SUBSCRIBE PAGE********* */
-.subscribe-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  padding: 0 10%;
+@media (max-width: 900px) {
+  .shell-footer .footer-grid { grid-template-columns: 1fr 1fr; }
+  .subscribe-grid { grid-template-columns: 1fr; }
 }
 
-.subscribe-card{
-  border: 1px solid #eee;
-  padding: 22px;
-  border-radius: 18px;
-  background: var(--paper);
+@media (max-width: 768px) {
+  header.main-header { padding: 80px 10% 40px 10%; }
+  h1 { font-size: 2.5rem; }
+
+  .grid-container { grid-template-columns: 1fr; }
+
+  .sector {
+    padding: 40px 10%;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .blog-header { padding: 40px 10%; }
+  .post h2 { font-size: 1.8rem; }
+  .post-body p { font-size: 1.05rem; }
 }
 
-.subscribe-card h2{
-  font-family: 'Source Serif 4', serif;
-  font-weight: 400;
-  margin: 10px 0 10px;
-}
-
-@media (max-width: 900px){
-  .subscribe-grid{ grid-template-columns: 1fr; padding: 0 10%; }
+@media (max-width: 600px) {
+  .shell-inner { padding: 12px 6%; }
+  .shell-footer .footer-grid { grid-template-columns: 1fr; padding: 28px 6%; }
+  .shell-footer .footer-bottom { padding: 14px 6% 18px; }
 }
