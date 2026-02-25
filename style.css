@@ -1,5 +1,5 @@
 /* =========================
-   Sonntagplatz — style.css (NASA structure + calm playful palette)
+   Sonntagplatz — style.css (NASA structure + calm palette + calm CTAs)
    ========================= */
 
 /* Core Variables & Global Setup */
@@ -11,18 +11,19 @@
   --gray: #5f6a72;
   --rule: rgba(31,42,51,0.10);
 
-  /* NASA-like shell (keep strong frame, but not harsh black) */
+  /* NASA-like shell (strong frame, not harsh black) */
   --shell: #1f2a33;             /* deep slate */
   --shellInk: #fbfaf7;
   --shellGray: rgba(251,250,247,0.72);
   --shellLine: rgba(251,250,247,0.14);
 
-  /* Khan-ish accent (used sparingly) */
+  /* Accent (used sparingly) */
   --accent: #9CB443;            /* calm green */
   --accentSoft: rgba(156,180,67,0.18);
 
-  --cta: #d84b3e;          /* warm NASA-ish red */
-  --ctaHover: #b93a31;     /* darker on hover */
+  /* CTA (warm red, NASA-ish) */
+  --cta: #d84b3e;
+  --ctaHover: #b93a31;
 }
 
 * { box-sizing: border-box; }
@@ -104,7 +105,7 @@ h1 {
 
 .shell-nav a.active {
   color: var(--shellInk);
-  border-bottom-color: var(--accent); /* playful, minimal */
+  border-bottom-color: var(--accent); /* tiny playful cue */
 }
 
 /* Actions are utility */
@@ -131,18 +132,20 @@ h1 {
   text-decoration: underline;
 }
 
-/* Use pill only for primary CTA on Und */
+/* Book-a-call pill (Und only) — filled red */
 .shell-pill {
-  color: var(--shellInk);
+  background: var(--cta);
+  border: 1px solid var(--cta);
+  color: var(--paper);
   text-decoration: none;
-  border: 1px solid rgba(251,250,247,0.22);
   padding: 7px 10px;
   border-radius: 999px;
   font-size: 0.72rem;
 }
 
 .shell-pill:hover {
-  border-color: rgba(251,250,247,0.5);
+  background: var(--ctaHover);
+  border-color: var(--ctaHover);
 }
 
 /* =========================
@@ -153,6 +156,7 @@ header.main-header {
   border-bottom: 1px solid var(--rule);
 }
 
+/* Grid portal */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -248,9 +252,8 @@ blockquote {
 }
 
 /* =========================
-   Buttons (calm, not dominant)
+   Buttons (calm outline by default)
    ========================= */
-/* Base button */
 .btn {
   display: inline-block;
   font: inherit;
@@ -263,17 +266,16 @@ blockquote {
   background: transparent;
 }
 
-/* Calm hover: hint of green, not full inversion */
 .btn:hover {
   border-color: rgba(31,42,51,0.38);
-  box-shadow: 0 0 0 3px var(--accentSoft);
+  box-shadow: none; /* no glow */
 }
 
-/* Primary: slate, not black; still readable */
+/* Primary CTA: OUTLINE red (calm) */
 .btn-primary {
   background: transparent;
   color: var(--cta);
-  border-color: rgba(216,75,62,0.5);
+  border-color: rgba(216,75,62,0.55);
 }
 
 .btn-primary:hover {
@@ -299,13 +301,12 @@ blockquote {
   border: 1px solid rgba(31,42,51,0.10);
   padding: 16px;
   border-radius: 18px;
-  background: #ffffff; /* keep cards crisp */
+  background: #ffffff;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .subscribe-card:hover {
   border-color: rgba(31,42,51,0.18);
-  background: #fff;
 }
 
 .subscribe-card h2 { margin: 6px 0 6px; }
@@ -327,15 +328,16 @@ blockquote {
 .subscribe-card .btn {
   margin-top: 12px;
   width: fit-content;
-  padding: 8px 11px;      /* slightly smaller */
+  padding: 8px 11px;
   font-size: 0.95rem;
 }
 
-/* Compact header variant (utility pages like subscribe) */
+/* Compact header variant for utility pages (subscribe/support) */
 .blog-header.compact-header {
   padding: 32px 10% 22px 10%;
   margin-bottom: 22px;
 }
+
 .blog-header.compact-header .tagline { margin-top: 12px; }
 
 /* =========================
