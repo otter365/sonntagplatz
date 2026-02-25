@@ -1,19 +1,28 @@
 /* =========================
-   Sonntagplatz — style.css
+   Sonntagplatz — style.css (NASA structure + calm playful palette)
    ========================= */
 
 /* Core Variables & Global Setup */
 :root {
-  --paper: #fdfcfb;
-  --ink: #1a1a1a;
-  --gray: #666;
-  --rule: #eee;
+  /* Warm, calmer reading surface */
+  --paper: #fbfaf7;             /* softer than pure white */
+  --paper2: #f6f3ed;            /* subtle panel tint */
+  --ink: #1f2a33;               /* softer than pure black */
+  --gray: #5f6a72;
+  --rule: rgba(31,42,51,0.10);
 
-  /* NASA-like shell */
-  --shell: #0b0b0b;
-  --shellInk: #f1f1f1;
-  --shellGray: rgba(241, 241, 241, 0.72);
-  --shellLine: rgba(241, 241, 241, 0.12);
+  /* NASA-like shell (keep strong frame, but not harsh black) */
+  --shell: #1f2a33;             /* deep slate */
+  --shellInk: #fbfaf7;
+  --shellGray: rgba(251,250,247,0.72);
+  --shellLine: rgba(251,250,247,0.14);
+
+  /* Khan-ish accent (used sparingly) */
+  --accent: #9CB443;            /* calm green */
+  --accentSoft: rgba(156,180,67,0.18);
+
+  --cta: #d84b3e;          /* warm NASA-ish red */
+  --ctaHover: #b93a31;     /* darker on hover */
 }
 
 * { box-sizing: border-box; }
@@ -30,7 +39,7 @@ body {
 /* Global typography */
 h1 {
   font-family: "Source Serif 4", serif;
-  font-size: 3.5rem;
+  font-size: 3.4rem;
   font-weight: 300;
   margin: 0;
   letter-spacing: -1px;
@@ -40,8 +49,8 @@ h1 {
   font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   color: var(--gray);
-  max-width: 600px;
-  margin-top: 20px;
+  max-width: 640px;
+  margin-top: 18px;
   font-weight: 300;
 }
 
@@ -60,15 +69,17 @@ h1 {
   padding: 14px 10%;
 }
 
+/* Brand wins */
 .shell-brand {
   color: var(--shellInk);
   text-decoration: none;
   font-family: "Source Serif 4", serif;
   font-weight: 400;
   letter-spacing: -0.5px;
-  font-size: 1.05rem; /* brand slightly stronger */
+  font-size: 1.05rem;
 }
 
+/* Nav */
 .shell-nav {
   display: flex;
   gap: 16px;
@@ -88,15 +99,15 @@ h1 {
 
 .shell-nav a:hover {
   color: var(--shellInk);
-  border-bottom-color: rgba(241, 241, 241, 0.25);
+  border-bottom-color: rgba(251,250,247,0.25);
 }
 
 .shell-nav a.active {
   color: var(--shellInk);
-  border-bottom-color: rgba(241, 241, 241, 0.45);
+  border-bottom-color: var(--accent); /* playful, minimal */
 }
 
-/* Actions are utility (not dominant) */
+/* Actions are utility */
 .shell-actions {
   margin-left: auto;
   display: flex;
@@ -120,29 +131,28 @@ h1 {
   text-decoration: underline;
 }
 
-/* Use pill only for primary CTA on Und (Book a call) */
+/* Use pill only for primary CTA on Und */
 .shell-pill {
   color: var(--shellInk);
   text-decoration: none;
-  border: 1px solid rgba(241, 241, 241, 0.22);
+  border: 1px solid rgba(251,250,247,0.22);
   padding: 7px 10px;
   border-radius: 999px;
   font-size: 0.72rem;
 }
 
 .shell-pill:hover {
-  border-color: rgba(241, 241, 241, 0.5);
+  border-color: rgba(251,250,247,0.5);
 }
 
 /* =========================
    Home Page Layout
    ========================= */
 header.main-header {
-  padding: 120px 10% 60px 10%;
+  padding: 110px 10% 58px 10%;
   border-bottom: 1px solid var(--rule);
 }
 
-/* Grid portal */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -150,23 +160,23 @@ header.main-header {
 }
 
 .sector {
-  padding: 60px 10%;
+  padding: 58px 10%;
   border-bottom: 1px solid var(--rule);
   border-right: 1px solid var(--rule);
-  transition: background 0.3s ease;
+  transition: background 0.25s ease;
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
 .sector:last-child { border-right: none; }
-.sector:hover { background-color: #f7f3f0; }
+.sector:hover { background-color: var(--paper2); }
 
 .sector h2 {
   font-family: "Source Serif 4", serif;
   font-size: 2rem;
   font-weight: 400;
-  margin: 0 0 15px 0;
+  margin: 0 0 12px 0;
 }
 
 .sector p {
@@ -174,8 +184,8 @@ header.main-header {
   font-weight: 300;
   font-size: 1rem;
   color: var(--gray);
-  max-width: 400px;
-  margin-top: 10px;
+  max-width: 420px;
+  margin-top: 8px;
   line-height: 1.5;
 }
 
@@ -183,7 +193,7 @@ header.main-header {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #999;
+  color: rgba(31,42,51,0.45);
   margin-bottom: 10px;
   display: block;
 }
@@ -191,89 +201,85 @@ header.main-header {
 /* =========================
    Blog/Section Page Layout
    ========================= */
-/* NOTE: .blog-page should be used on body for section pages */
-.blog-page {
-  /* Keep page width consistent with your current style */
-  padding: 0;
-}
+.blog-page { padding: 0; }
 
-.blog-nav {
-  padding: 40px 10% 0 10%;
-}
+.blog-nav { padding: 40px 10% 0 10%; }
 
 .blog-header {
-  padding: 60px 10% 60px 10%;
+  padding: 56px 10% 52px 10%;
   border-bottom: 1px solid var(--rule);
-  margin-bottom: 60px;
+  margin-bottom: 52px;
 }
 
-.blog-content {
-  padding: 0 10% 60px 10%;
-}
+.blog-content { padding: 0 10% 60px 10%; }
 
 .post-meta {
-  font-size: 0.8rem;
-  color: #999;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+  font-size: 0.78rem;
+  color: rgba(31,42,51,0.45);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
-.post-body {
-  font-size: 1.1rem;
-  color: var(--ink);
-}
+.post-body { font-size: 1.05rem; color: var(--ink); }
 
 .post-body p {
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--ink);
-  max-width: 650px;
+  max-width: 680px;
   line-height: 1.7;
-  margin: 0 0 18px 0;
+  margin: 0 0 16px 0;
 }
 
 .post h2 {
   font-family: "Source Serif 4", serif;
-  font-size: 2.5rem;
+  font-size: 2.35rem;
   font-weight: 400;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
 }
 
 blockquote {
-  border-left: 3px solid var(--ink);
-  padding-left: 20px;
+  border-left: 3px solid rgba(31,42,51,0.85);
+  padding-left: 18px;
   font-style: italic;
-  margin: 30px 0;
+  margin: 26px 0;
 }
 
 /* =========================
-   Buttons (light theme)
+   Buttons (calm, not dominant)
    ========================= */
+/* Base button */
 .btn {
   display: inline-block;
   font: inherit;
   text-decoration: none;
   border-radius: 999px;
-  padding: 10px 14px;
-  border: 1px solid rgba(0, 0, 0, 0.18);
+  padding: 9px 12px;
+  line-height: 1;
+  border: 1px solid rgba(31,42,51,0.18);
   color: var(--ink);
   background: transparent;
-  line-height: 1; /* consistent button height */
 }
 
+/* Calm hover: hint of green, not full inversion */
 .btn:hover {
-  border-color: rgba(0, 0, 0, 0.35);
+  border-color: rgba(31,42,51,0.38);
+  box-shadow: 0 0 0 3px var(--accentSoft);
 }
 
+/* Primary: slate, not black; still readable */
 .btn-primary {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
+  background: transparent;
+  color: var(--cta);
+  border-color: rgba(216,75,62,0.5);
 }
 
 .btn-primary:hover {
-  opacity: 0.92;
+  background: rgba(216,75,62,0.10);
+  border-color: rgba(216,75,62,0.85);
+  color: var(--ctaHover);
 }
 
 /* =========================
@@ -282,43 +288,55 @@ blockquote {
 .subscribe-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  padding: 0; /* IMPORTANT: blog-content already provides 10% padding */
+  gap: 18px;
+  padding: 0; /* blog-content already provides padding */
 }
 
-/* Clean, aligned cards */
 .subscribe-card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  border: 1px solid var(--rule);
-  padding: 18px;
+  gap: 8px;
+  border: 1px solid rgba(31,42,51,0.10);
+  padding: 16px;
   border-radius: 18px;
-  background: var(--paper);
+  background: #ffffff; /* keep cards crisp */
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-/* Use your existing post-meta but remove extra margin inside cards */
+.subscribe-card:hover {
+  border-color: rgba(31,42,51,0.18);
+  background: #fff;
+}
+
+.subscribe-card h2 { margin: 6px 0 6px; }
+
 .subscribe-card .post-meta {
   margin: 0;
+  line-height: 1.2;
 }
 
-/* Avoid "post-body" styling for the card description:
-   your HTML currently uses <p class="post-body"> inside cards.
-   We neutralize it here so it doesn't behave like long-form paragraphs.
-*/
+.subscribe-card .desc,
 .subscribe-card .post-body {
   margin: 0;
   font-size: 1rem;
   color: var(--gray);
   max-width: none;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
-/* Pin the button to bottom regardless of content length */
 .subscribe-card .btn {
-  margin-top: 10px;
+  margin-top: 12px;
   width: fit-content;
+  padding: 8px 11px;      /* slightly smaller */
+  font-size: 0.95rem;
 }
+
+/* Compact header variant (utility pages like subscribe) */
+.blog-header.compact-header {
+  padding: 32px 10% 22px 10%;
+  margin-bottom: 22px;
+}
+.blog-header.compact-header .tagline { margin-top: 12px; }
 
 /* =========================
    NASA-like Shell Footer
@@ -374,9 +392,7 @@ blockquote {
   align-items: center;
 }
 
-.shell-footer .dot {
-  opacity: 0.6;
-}
+.shell-footer .dot { opacity: 0.6; }
 
 /* =========================
    Responsive
@@ -404,19 +420,11 @@ blockquote {
 
   .blog-header { padding: 40px 10%; }
   .post h2 { font-size: 1.8rem; }
-  .post-body p { font-size: 1.05rem; }
+  .post-body p { font-size: 1.03rem; }
 }
 
 @media (max-width: 600px) {
   .shell-inner { padding: 12px 6%; }
   .shell-footer .footer-grid { grid-template-columns: 1fr; padding: 28px 6%; }
   .shell-footer .footer-bottom { padding: 14px 6% 18px; }
-}
-.compact-header{
-  padding: 34px 10% 28px 10%;
-  margin-bottom: 28px;
-}
-
-.compact-header .tagline{
-  margin-top: 12px;
 }
