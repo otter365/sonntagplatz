@@ -631,3 +631,50 @@ blockquote {
   color: rgba(31,42,51,0.55);
   background: rgba(31,42,51,0.02);
 }
+
+/* Support page */
+.support-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.support-card{
+  border: 1px solid rgba(31,42,51,0.10);
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.support-card h2{
+  margin: 4px 0 4px;
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+}
+
+.support-card .desc{
+  margin: 0;
+  color: var(--gray);
+  line-height: 1.55;
+}
+
+.support-actions{ margin-top: 6px; }
+
+.support-note{
+  margin: 0;
+  color: rgba(31,42,51,0.55);
+  font-size: 0.95rem;
+}
+
+.support-list{
+  margin: 0;
+  padding-left: 18px;
+  color: var(--gray);
+}
+
+@media (max-width: 900px){
+  .support-grid{ grid-template-columns: 1fr; }
+}
