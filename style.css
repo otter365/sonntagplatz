@@ -440,3 +440,112 @@ blockquote {
   .shell-footer .footer-grid { grid-template-columns: 1fr; padding: 28px 6%; }
   .shell-footer .footer-bottom { padding: 14px 6% 18px; }
 }
+
+/* ===== Und landing page ===== */
+.und-hero { padding-top: 10px; }
+.und-cta { display:flex; gap:12px; flex-wrap: wrap; align-items:center; margin-top: 14px; }
+.und-note { margin-top: 14px; color: var(--gray); max-width: 62ch; }
+
+.und-block { margin-top: 44px; }
+.und-block h2 { font-family: "Source Serif 4", serif; font-weight: 400; margin: 0 0 14px; }
+.und-lead { margin: 0 0 18px; color: var(--ink); max-width: 72ch; }
+
+.und-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.und-card{
+  border: 1px solid rgba(31,42,51,0.10);
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff;
+}
+.und-kicker{
+  font-size: 0.78rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(31,42,51,0.45);
+  margin-bottom: 8px;
+}
+.und-card h3{
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.und-card p{ margin: 0; color: var(--gray); }
+
+.und-offers{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.und-offer{
+  border: 1px solid rgba(31,42,51,0.10);
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff;
+}
+.und-offer h3{
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.und-muted{ margin: 0 0 12px; color: rgba(31,42,51,0.55); }
+.und-offer ul{ margin: 0; padding-left: 18px; color: var(--gray); }
+.und-offer li{ margin: 6px 0; }
+
+.und-reading{ display:flex; gap: 18px; flex-wrap: wrap; margin: 10px 0 18px; }
+.und-reading-link{
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31,42,51,0.18);
+}
+.und-reading-link:hover{ border-bottom-color: rgba(31,42,51,0.38); }
+
+.und-sample{
+  border: 1px solid rgba(31,42,51,0.10);
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff;
+}
+
+@media (max-width: 900px){
+  .und-grid, .und-offers{ grid-template-columns: 1fr; }
+}
+
+/* Und page: tighten hero-to-next-section spacing */
+.und-hero { padding-top: 6px; }
+.und-hero .tagline { margin-top: 14px; }
+.und-hero .und-lead { margin: 12px 0 0; max-width: 72ch; }
+
+.und-hero + .und-block { margin-top: 24px; } /* was effectively too large */
+
+/* Optional: let the add-on span full width */
+.und-offer--full{
+  grid-column: 1 / -1;
+}
+.und-actions{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 18px;
+  font-size: 0.92rem;                 /* smaller than body */
+  color: rgba(31,42,51,0.55);         /* softer */
+}
+
+.und-actions a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31,42,51,0.18);  /* subtle */
+}
+
+.und-actions a:hover{
+  color: rgba(31,42,51,0.80);
+  border-bottom-color: rgba(31,42,51,0.35);
+}
+
+.und-actions .sep{
+  opacity: 0.45;
+}

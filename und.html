@@ -1,154 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-     <!-- Section map (source of truth):
+  <head>
+    <!-- Section map (source of truth):
     DochSonntag = Torah / Ethics / Wisdom
     AberSonntag = World Systems / Institutional Analysis
     UndSonntag  = Business & Tech
     NurSonntag  = Craft / Living / Curiosity
     -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UndSonntag | Product Strategy, Business & Technical Architecture</title>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      UndSonntag | Product Strategy, Business & Technical Architecture
+    </title>
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems.">
-    <meta name="author" content="sonntag">
-    <meta name="keywords" content="product strategy, technical architecture, product management, tech leadership, growth mechanics, CI/CD, engineering management, developer resources">
-    
+    <meta
+      name="description"
+      content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems."
+    />
+    <meta name="author" content="sonntag" />
+    <meta
+      name="keywords"
+      content="product strategy, technical architecture, product management, tech leadership, growth mechanics, CI/CD, engineering management, developer resources"
+    />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sonntagplatz.com/und.html">
-    <meta property="og:title" content="UndSonntag | Product Strategy, Business & Technical Architecture">
-    <meta property="og:description" content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems.">
-    <meta property="og:image" content="https://sonntagplatz.com/images/og-und.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sonntagplatz.com/und.html" />
+    <meta
+      property="og:title"
+      content="UndSonntag | Product Strategy, Business & Technical Architecture"
+    />
+    <meta
+      property="og:description"
+      content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems."
+    />
+    <meta
+      property="og:image"
+      content="https://sonntagplatz.com/images/og-und.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://sonntagplatz.com/und.html">
-    <meta name="twitter:title" content="UndSonntag | Product Strategy, Business & Technical Architecture">
-    <meta name="twitter:description" content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems.">
-    <meta name="twitter:image" content="https://sonntagplatz.com/images/og-und.png">
-    
-    <!-- Additional Meta -->         
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://sonntagplatz.com/und.html" />
+    <meta
+      name="twitter:title"
+      content="UndSonntag | Product Strategy, Business & Technical Architecture"
+    />
+    <meta
+      name="twitter:description"
+      content="Product strategy, technical architecture, and growth mechanics. Resources for developers, founders, and product managers building scalable systems."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sonntagplatz.com/images/og-und.png"
+    />
+
+    <!-- Additional Meta -->
     <!-- <meta property="fb:app_id" content="766166919412296"/> -->
-    <meta name="theme-color" content="#1a1a1a">
-    <link rel="canonical" href="https://sonntagplatz.com/und.html">
-    
+    <meta name="theme-color" content="#1a1a1a" />
+    <link rel="canonical" href="https://sonntagplatz.com/und.html" />
+
     <!-- Favicon - Multi-device support -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "UndSonntag",
-    "url": "https://sonntagplatz.com/und.html",
-    "inLanguage": "en"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "UndSonntag",
+        "url": "https://sonntagplatz.com/und.html",
+        "inLanguage": "en"
+      }
     </script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header class="shell-header">
-        <div class="shell-inner">
-            <a class="shell-brand" href="/index.html">Sonntagplatz</a>
+      <div class="shell-inner">
+        <a class="shell-brand" href="/index.html">Sonntagplatz</a>
 
-            <nav class="shell-nav" aria-label="Primary">
-            <a class="active" href="/und.html">Und</a>
-            <a href="/doch.html">Doch</a>
-            <a href="/aber.html">Aber</a>
-            <a href="/nur.html">Nur</a>
-            </nav>
+        <nav class="shell-nav" aria-label="Primary">
+          <a class="active" href="/und.html">Und</a>
+          <a href="/doch.html">Doch</a>
+          <a href="/aber.html">Aber</a>
+          <a href="/nur.html">Nur</a>
+        </nav>
 
-            <div class="shell-actions">
-                <a class="shell-link" href="mailto:contact@sonntagplatz.com?subject=UndSonntag%20—%20Inquiry&body=What%20are%20you%20building%3F%0AWhat%20problem%20are%20you%20solving%3F%0ATimeline%3F%0AWhat%20help%20do%20you%20want%3F">Get in touch</a>
-                <a class="shell-pill" href="https://calendar.app.google/MyYgPtvLmU7SEREb6" target="_blank" rel="noopener" >Book a call</a>
-                <a class="shell-link" href="https://rsonntag.substack.com/" target="_blank" rel="noopener">Subscribe</a>
-            </div>
+        <div class="shell-actions">
+          <a
+            class="shell-link"
+            href="mailto:contact@sonntagplatz.com?subject=UndSonntag%20—%20Inquiry&body=What%20are%20you%20building%3F%0AWhat%20problem%20are%20you%20solving%3F%0ATimeline%3F%0AWhat%20help%20do%20you%20want%3F"
+            >Get in touch</a
+          >
+          <a
+            class="shell-pill"
+            href="https://calendar.app.google/MyYgPtvLmU7SEREb6"
+            target="_blank"
+            rel="noopener"
+            >Book a call</a
+          >
+          <a
+            class="shell-link"
+            href="https://rsonntag.substack.com/"
+            target="_blank"
+            rel="noopener"
+            >Subscribe</a
+          >
         </div>
-    </header>
-
-    <header class="blog-header compact-header">
-        <h1>UndSonntag</h1>
-        <p class="tagline">Notes on building software & businesses: product, systems, and delivery.</p>
+      </div>
     </header>
 
     <main class="blog-content">
-        <article class="post">
-            <div class="post-meta">February 9, 2026 • Strategy & Infrastructure</div>
-            <h2>CI/CD for Product Managers: Getting Your Hands Dirty</h2>
-            
-            <div class="post-body">
-                <p>This site is deployed through a simple pipeline: <strong>VS Code → GitHub → Cloudflare Pages</strong>.</p>
+      <section class="und-hero">
+        <div class="post-meta">Business & Tech</div>
+        <h1>UndSonntag</h1>
+        <p class="tagline">
+          Systems, execution, and decision-making at the intersection of product
+          and engineering.
+        </p>
 
-                <p>Most product work touches CI/CD indirectly—roadmaps, release coordination, incident follow-ups. I wanted the opposite: a setup where publishing is frictionless and fully under my control.</p>
+        <p class="und-lead" style="margin-top: 14px">
+          I help teams reduce ambiguity, increase shipping velocity, and build
+          operating rhythms that hold under pressure.
+        </p>
+      </section>
 
-                <p>The result is straightforward: every change is versioned, reviewed, and deployed automatically. The distance between a draft and a live URL is now one commit.</p>
+      <section class="und-block">
+        <h2>How I help</h2>
+        <p class="und-lead">
+          Most teams don’t fail on effort. They fail on structure: unclear
+          goals, fuzzy ownership, weak feedback loops, and decisions made
+          without a model.
+        </p>
 
-                <blockquote>
-                    I want this section to document practical systems—how they work, why they matter, and how to keep them maintainable.
-                </blockquote>
+        <div class="und-grid">
+          <div class="und-card">
+            <div class="und-kicker">Strategy</div>
+            <h3>Clarity on what to build</h3>
+            <p>
+              Sharper problem framing, deliberate prioritization, and a metric
+              model that survives real tradeoffs.
+            </p>
+          </div>
 
-                <p>Future posts will cover the small mechanics that compound: structure, deployment, release hygiene, and the interface between product decisions and engineering reality.</p>
-            </div>
-        </article>
-    </main>     
+          <div class="und-card">
+            <div class="und-kicker">Systems</div>
+            <h3>Execution without fragility</h3>
+            <p>
+              Cadence, interfaces, and quality loops that keep shipping
+              consistent—even under constraints.
+            </p>
+          </div>
+
+          <div class="und-card">
+            <div class="und-kicker">Wedge</div>
+            <h3>Pick what to sell</h3>
+            <p>
+              Narrow to one ICP + one painful job, craft an offer, and define
+              the fastest path to “yes” before you build.
+            </p>
+          </div>
+
+          <div class="und-card">
+            <div class="und-kicker">Validation & Pricing</div>
+            <h3>Sell before you build</h3>
+            <p>
+              Proof-first experiments, early pricing, and a simple distribution
+              loop so you’re not guessing in code for 6 months.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="und-block">
+        <h2>Ways I Work</h2>
+        <p class="und-lead">
+          Two modes: de-risk decisions for teams, and de-risk go-to-market for
+          founders.
+        </p>
+
+        <div class="und-offers">
+          <!-- For Companies / Hiring Managers -->
+          <div class="und-offer">
+            <h3>Clarity Sprint (Product × Engineering)</h3>
+            <p class="und-muted">1–2 weeks</p>
+            <ul>
+              <li>
+                Turn ambiguity into a decision model: problem, constraints,
+                success metrics
+              </li>
+              <li>
+                Expose ownership gaps, decision bottlenecks, and weak feedback
+                loops
+              </li>
+              <li>
+                Deliver a prioritized plan with clear owners + checkpoints
+              </li>
+            </ul>
+          </div>
+
+          <div class="und-offer">
+            <h3>Operating Rhythm Setup</h3>
+            <p class="und-muted">2–4 weeks</p>
+            <ul>
+              <li>
+                Install delivery cadence + rituals that reduce churn and keep
+                shipping consistent
+              </li>
+              <li>
+                Definition of done + quality loops (release, QA, incident
+                learnings)
+              </li>
+              <li>
+                Decision + execution templates (tradeoffs, RFCs, handoffs)
+              </li>
+            </ul>
+          </div>
+
+          <!-- For Founders -->
+          <div class="und-offer">
+            <h3>Wedge & Offer Sprint</h3>
+            <p class="und-muted">1 week</p>
+            <ul>
+              <li>
+                Narrow to one ICP + one painful job (no “everyone” positioning)
+              </li>
+              <li>Craft a clear offer statement + scope boundaries</li>
+              <li>Define the fastest path to first “yes” before you build</li>
+            </ul>
+          </div>
+
+          <div class="und-offer">
+            <h3>Validation & Pricing Sprint</h3>
+            <p class="und-muted">1–2 weeks</p>
+            <ul>
+              <li>
+                Proof-first experiments: what to test, what counts, what to
+                ignore
+              </li>
+              <li>Early pricing hypothesis + objection handling</li>
+              <li>One repeatable distribution loop to run weekly</li>
+            </ul>
+          </div>
+
+          <div class="und-offer und-offer--full">
+            <h3>Add-On: Technical Product Review</h3>
+            <p class="und-muted">
+              Single session or short series — architecture/product interface
+              review, risk &amp; dependency map, pragmatic recommendations.
+            </p>
+          </div>
+        </div>
+
+        <div class="und-cta" style="margin-top: 18px">
+          <a
+            class="shell-pill"
+            href="https://calendar.app.google/MyYgPtvLmU7SEREb6"
+            target="_blank"
+            rel="noopener"
+            >Book a call</a
+          >
+          <a
+            class="btn btn-primary"
+            href="mailto:contact@sonntagplatz.com?subject=UndSonntag%20—%20Inquiry&body=What%20are%20you%20building%3F%0AWhat%20problem%20are%20you%20solving%3F%0ATimeline%3F%0AWhat%20help%20do%20you%20want%3F"
+            >Get in touch</a
+          >
+        </div>
+      </section>
+
+      <section class="und-block">
+        <h2>Reading</h2>
+        <p class="und-lead">
+          UndSonntag is published as <strong>The Product Perspective</strong> on
+          Substack.
+        </p>
+
+        <div class="und-actions" aria-label="Reading actions">
+          <a
+            href="https://rsonntag.substack.com/"
+            target="_blank"
+            rel="noopener"
+            >Subscribe (Und)</a
+          >
+          <span class="sep">·</span>
+          <a href="/subscribe.html">All subscriptions</a>
+          <span class="sep">·</span>
+          <a href="/und-blog.html">Browse the archive</a>
+        </div>
+
+        <div class="und-sample">
+          <div class="post-meta">Sample</div>
+          <h3>CI/CD for Product Managers: Getting Your Hands Dirty</h3>
+          <p class="und-muted">
+            A practical pipeline: VS Code → GitHub → Cloudflare Pages, and what
+            it changes about shipping.
+          </p>
+          <a
+            class="und-reading-link"
+            href="https://rsonntag.substack.com/p/von-html-datei-zu-produktionssystem"
+            target="_blank"
+            rel="noopener"
+            >Read on Substack →</a
+          >
+        </div>
+      </section>
+    </main>
     <footer class="shell-footer">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-title">Sonntagplatz</div>
-                <p class="footer-text">A library across four verticals—Torah, systems analysis, product execution, and craft—kept intentionally lean.</p>
-            </div>
-
-            <div>
-                <div class="footer-title">Sections</div>
-                <a href="/und.html">UndSonntag</a>
-                <a href="/doch.html">DochSonntag</a>
-                <a href="/aber.html">AberSonntag</a>
-                <a href="/nur.html">NurSonntag</a>
-            </div>
-
-            <div>
-                <div class="footer-title">Substack</div>
-                <a href="https://rsonntag.substack.com/" target="_blank" rel="noopener">The Product Perspective</a>
-                <a href="https://dochsonntag.substack.com/" target="_blank" rel="noopener">DochSonntag</a>
-                <a href="https://abersonntag.substack.com/" target="_blank" rel="noopener">AberSonntag</a>
-                <a href="https://nursonntag.substack.com/" target="_blank" rel="noopener">NurSonntag</a>
-            </div>
-
-            <div>
-            <div class="footer-title">Explore</div>
-            <a href="/sitemap.xml">Sitemap</a>
-            <a href="/support.html">Support</a>
-            <a href="mailto:contact@sonntagplatz.com">Contact</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">Sonntagplatz</div>
+          <p class="footer-text">
+            A library across four verticals—Torah, systems analysis, product
+            execution, and craft—kept intentionally lean.
+          </p>
         </div>
 
-        <div class="footer-bottom">
-            <span>© <span id="year"></span> Sonntagplatz</span>
-            <span class="dot">·</span>
-            <a href="/sitemap.xml">Sitemap</a>
+        <div>
+          <div class="footer-title">Sections</div>
+          <a href="/und.html">UndSonntag</a>
+          <a href="/doch.html">DochSonntag</a>
+          <a href="/aber.html">AberSonntag</a>
+          <a href="/nur.html">NurSonntag</a>
         </div>
 
-        <script>
-            document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
+        <div>
+          <div class="footer-title">Substack</div>
+          <a
+            href="https://rsonntag.substack.com/"
+            target="_blank"
+            rel="noopener"
+            >The Product Perspective</a
+          >
+          <a
+            href="https://dochsonntag.substack.com/"
+            target="_blank"
+            rel="noopener"
+            >DochSonntag</a
+          >
+          <a
+            href="https://abersonntag.substack.com/"
+            target="_blank"
+            rel="noopener"
+            >AberSonntag</a
+          >
+          <a
+            href="https://nursonntag.substack.com/"
+            target="_blank"
+            rel="noopener"
+            >NurSonntag</a
+          >
+        </div>
+
+        <div>
+          <div class="footer-title">Explore</div>
+          <a href="/sitemap.xml">Sitemap</a>
+          <a href="/support.html">Support</a>
+          <a href="mailto:contact@sonntagplatz.com">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Sonntagplatz</span>
+        <span class="dot">·</span>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
     </footer>
- 
-</body>
+  </body>
 </html>
