@@ -4,9 +4,6 @@
     <loc>https://sonntagplatz.com/</loc>
   </url>
   <url>
-    <loc>https://sonntagplatz.com/index.html</loc>
-  </url>
-  <url>
     <loc>https://sonntagplatz.com/und.html</loc>
   </url>
   <url>
@@ -23,4 +20,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url><loc>https://sonntagplatz.com/subscribe.html</loc></url>
+  <url><loc>https://sonntagplatz.com/support.html</loc></url>
 </urlset>
