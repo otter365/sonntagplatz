@@ -16,10 +16,14 @@
     <loc>https://sonntagplatz.com/nur.html</loc>
   </url>
   <url>
+    <loc>https://sonntagplatz.com/posters.html</loc>
+  </url>
+  <url>
     <loc>https://sonntagplatz.com/und-blog.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url><loc>https://sonntagplatz.com/subscribe.html</loc></url>
+  <url>
+    <loc>https://sonntagplatz.com/subscribe.html</loc></url>
   <url><loc>https://sonntagplatz.com/support.html</loc></url>
 </urlset>
