@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Section map (source of truth):
+    DochSonntag = Torah / Ethics / Wisdom
+    AberSonntag = World Systems / Institutional Analysis
+    UndSonntag  = Business & Tech
+    NurSonntag  = Craft / Living / Curiosity
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Posters | NurSonntag</title>
-  <meta name="description" content="A small library of printable posters. Free to download via NurSonntag subscription." />
+
+  <meta name="description" content="Printable posters. Free to download via NurSonntag subscription." />
   <meta name="author" content="sonntag" />
+
   <link rel="canonical" href="https://sonntagplatz.com/posters.html" />
   <link rel="stylesheet" href="style.css" />
 
@@ -13,20 +21,20 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sonntagplatz.com/posters.html" />
   <meta property="og:title" content="Posters | NurSonntag" />
-  <meta property="og:description" content="A small library of printable posters. Free to download via NurSonntag subscription." />
+  <meta property="og:description" content="Printable posters. Free to download via NurSonntag subscription." />
   <meta property="og:image" content="https://sonntagplatz.com/images/og-nur.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://sonntagplatz.com/posters.html" />
   <meta name="twitter:title" content="Posters | NurSonntag" />
-  <meta name="twitter:description" content="A small library of printable posters. Free to download via NurSonntag subscription." />
+  <meta name="twitter:description" content="Printable posters. Free to download via NurSonntag subscription." />
   <meta name="twitter:image" content="https://sonntagplatz.com/images/og-nur.png" />
 
-  <!-- Favicon -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
@@ -35,7 +43,6 @@
 
 <body class="blog-page">
 
-  <!-- Shell header -->
   <header class="shell-header">
     <div class="shell-inner">
       <a class="shell-brand" href="/index.html">Sonntagplatz</a>
@@ -56,7 +63,7 @@
 
   <header class="blog-header compact-header">
     <h1>Posters</h1>
-    <p class="tagline">Printable images and small collections. Free to download via NurSonntag subscription.</p>
+    <p class="tagline">Printable posters. Free to download via NurSonntag subscription.</p>
 
     <div class="und-actions" aria-label="Poster actions">
       <a href="/nur.html">NurSonntag</a>
@@ -68,13 +75,27 @@
   </header>
 
   <main class="blog-content">
+
     <section class="poster-grid">
 
-      <!-- Poster card template -->
+      <!-- Delusion -->
       <article class="poster-card">
-        <div class="poster-thumb">Preview</div>
-        <h2 class="poster-title">Poster Title</h2>
-        <p class="poster-desc">One sentence describing the poster (format, theme, size).</p>
+        <button class="poster-preview"
+          data-full="/images/posters/delusion_thumb_600x800.webp"
+          aria-label="Preview Delusion poster">
+          <img
+            src="/images/posters/delusion_thumb_600x800.webp"
+            alt="Delusion poster — definition style with ostrich"
+            class="poster-img"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="800"
+          />
+        </button>
+
+        <h2 class="poster-title">Delusion</h2>
+        <p class="poster-desc">Definition-style poster. 3:4 preview.</p>
 
         <div class="poster-actions">
           <a class="btn btn-primary" href="https://nursonntag.substack.com/" target="_blank" rel="noopener">Download (free)</a>
@@ -84,12 +105,46 @@
         <p class="poster-note">Downloads are delivered via NurSonntag (welcome email / pinned post).</p>
       </article>
 
-      <!-- Duplicate poster-card blocks for more posters -->
+      <!-- Mauerpark -->
+      <article class="poster-card">
+        <button class="poster-preview"
+          data-full="/images/posters/mauerpark_thumb_600x800.webp"
+          aria-label="Preview Mauerpark poster">
+          <img
+            src="/images/posters/mauerpark_thumb_600x800.webp"
+            alt="Mauerpark poster — sunflower photo, Berlin"
+            class="poster-img"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="800"
+          />
+        </button>
+
+        <h2 class="poster-title">Mauerpark</h2>
+        <p class="poster-desc">Photo poster. Berlin. 3:4 preview.</p>
+
+        <div class="poster-actions">
+          <a class="btn btn-primary" href="https://nursonntag.substack.com/" target="_blank" rel="noopener">Download (free)</a>
+          <a class="btn" href="/support.html">Support</a>
+        </div>
+
+        <p class="poster-note">Downloads are delivered via NurSonntag (welcome email / pinned post).</p>
+      </article>
 
     </section>
+
   </main>
 
-  <!-- Shell footer -->
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close="true"></div>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Poster preview">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+      <img class="lightbox-img" id="lightboxImg" alt="" />
+    </div>
+  </div>
+
   <footer class="shell-footer">
     <div class="footer-grid">
       <div>
@@ -131,6 +186,42 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </footer>
+
+  <script>
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightboxImg");
+    const lbClose = document.getElementById("lightboxClose");
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || "Poster preview";
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox(){
+      lb.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".poster-preview");
+      if (btn) {
+        const src = btn.getAttribute("data-full");
+        const img = btn.querySelector("img");
+        openLightbox(src, img ? img.alt : "");
+        return;
+      }
+      if (e.target.matches("[data-close='true']")) closeLightbox();
+    });
+
+    lbClose?.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 
 </body>
 </html>

@@ -740,3 +740,197 @@ blockquote {
 @media (max-width: 900px){
   .poster-grid{ grid-template-columns: 1fr; }
 }
+
+.poster-img{
+  width: 100%;
+  height: 300px;
+  object-fit: contain;                /* show the whole poster */
+  background: var(--paper);           /* “mat” */
+  border-radius: 14px;
+  display: block;
+  border: 1px solid rgba(31,42,51,0.10);
+  padding: 10px;                      /* breathing room */
+}
+
+.poster-preview{
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.lightbox[aria-hidden="false"]{
+  display: block;
+}
+
+.lightbox-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.lightbox-panel{
+  position: relative;
+  max-width: min(900px, 92vw);
+  max-height: 92vh;
+  margin: 4vh auto;
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 1px solid rgba(31,42,51,0.18);
+  background: #fff;
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-img{
+  width: 100%;
+  height: auto;
+  max-height: 86vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* Posters grid: 3-up desktop, 2-up mid, 1-up mobile */
+.poster-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+@media (min-width: 1200px){
+  .poster-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px){
+  .poster-grid{ grid-template-columns: 1fr; }
+}
+
+.poster-card{
+  border: 1px solid rgba(31,42,51,0.10);
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.poster-preview{
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+/* Show full poster (not cropped) */
+.poster-img{
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: var(--paper);
+  border-radius: 14px;
+  display:block;
+  border: 1px solid rgba(31,42,51,0.10);
+  padding: 10px;
+}
+
+.poster-title{
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.poster-desc{
+  margin: 0;
+  color: var(--gray);
+  line-height: 1.55;
+}
+
+.poster-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.poster-note{
+  margin: 0;
+  color: rgba(31,42,51,0.55);
+  font-size: 0.95rem;
+}
+
+/* Lightbox */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.lightbox[aria-hidden="false"]{
+  display: block;
+}
+
+.lightbox-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.lightbox-panel{
+  position: relative;
+  max-width: min(900px, 92vw);
+  max-height: 92vh;
+  margin: 4vh auto;
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 1px solid rgba(31,42,51,0.18);
+  background: #fff;
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-img{
+  width: 100%;
+  height: auto;
+  max-height: 86vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  background: #fff;
+}
