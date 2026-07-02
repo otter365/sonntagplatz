@@ -1,0 +1,54 @@
+/* Sonntagplatz logo patch
+   Small, editorial seal treatment. No tracking, no scripts. */
+
+.shell-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shell-brand::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  background-image: url("/images/sonntagplatz-seal.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: invert(1);
+  opacity: 0.92;
+}
+
+.shell-footer .footer-grid > div:first-child .footer-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shell-footer .footer-grid > div:first-child .footer-title::before {
+  content: "";
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  background-image: url("/images/sonntagplatz-seal.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: invert(1);
+  opacity: 0.88;
+}
+
+@media (max-width: 600px) {
+  .shell-brand::before {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+
+  .shell-footer .footer-grid > div:first-child .footer-title::before {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+}
